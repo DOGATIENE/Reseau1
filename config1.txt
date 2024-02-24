@@ -1,0 +1,57 @@
+CONFIGURATION VLAN
+
+Switch>
+Switch>en
+Switch#conf t
+Switch(config)#vlan 1
+Switch(config-vlan)#name VLAN1
+Default VLAN 1 may not have its name changed.
+
+Switch(config-vlan)#exit
+Switch(config)#interface fastEthernet 0/1
+Switch(config-if)#switchport acces vlan 1
+Switch(config-if)#exit
+Switch(config)#interface fastEthernet 0/2
+Switch(config-if)#switchport acces vlan 1
+Switch(config-if)#exit
+
+VLAN2
+Switch(config)#vlan 2
+Switch(config-vlan)#name VLAN2
+Switch(config-vlan)#exit
+Switch(config)#interface fastEthernet 0/3
+Switch(config-if)#switchport acces vlan 2
+Switch(config-if)#exit
+Switch(config)#interface fastEthernet 0/4
+Switch(config-if)#switchport acces vlan 2
+Switch(config-if)#exit
+
+
+VLAN3
+Switch(config)#vlan 3
+Switch(config-vlan)#name VLAN3
+Switch(config-vlan)#exit
+Switch(config)#interface fastEthernet 0/5
+Switch(config-if)#switchport acces vlan 3
+Switch(config-if)#exit
+Switch(config)#interface fastEthernet 0/6
+Switch(config-if)#switchport acces vlan 3
+Switch(config-if)#exit
+
+VLAN4
+Switch(config)#vlan 4
+Switch(config-vlan)#name VLAN4
+Switch(config-vlan)#exit
+Switch(config)#interface fastEthernet 0/7
+Switch(config-if)#switchport acces vlan 4
+Switch(config-if)#exit
+Switch(config)#interface fastEthernet 0/8
+Switch(config-if)#switchport acces vlan 4
+Switch(config-if)#exit
+
+Switch#copy running-config startup-config 
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+Switch#
+
